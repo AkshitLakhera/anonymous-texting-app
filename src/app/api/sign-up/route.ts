@@ -1,0 +1,24 @@
+import dbConnect  from "@/lib/dbConnect";
+import UserModel from "@/model/User";
+import bcrypt from  "bcrypt";
+import { sendVerificationEmail } from "@/helpers/sendVerificationEmail";
+export  async function POST(request: Request ) {
+    await dbConnect ();
+    try {
+        const { username,email,password} =  await  request.json();
+        
+    } catch (error) {
+        console.error('Error registring user',error)
+        return Response.json(
+            {
+                success:false,
+                message:"Error in registring the user "
+            },
+            {
+                status:500,
+            }
+        )
+    }
+    
+}
+

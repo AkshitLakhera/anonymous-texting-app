@@ -21,3 +21,4 @@ const connection :ConnectionObject = {}
         }
 
     }
+export default dbConnect;
